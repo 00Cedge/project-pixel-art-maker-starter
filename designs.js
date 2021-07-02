@@ -3,14 +3,14 @@ var uniquieId = '';
 
 function makeGrid(width,height) {
     //Clear Grid & Event listener       
-        const pixelCanvas = document.querySelector('#pixelCanvas');
-        const pixelCanvasRows = pixelCanvas.childElementCount;
-        if (pixelCanvasRows > 0) {
-            for (let y = 0; y < pixelCanvasRows; y++) {
-                pixelCanvas.firstElementChild.remove();
-            }
+    const pixelCanvas = document.querySelector('#pixelCanvas');
+    const pixelCanvasRows = pixelCanvas.childElementCount;
+    if (pixelCanvasRows > 0) {
+        for (let y = 0; y < pixelCanvasRows; y++) {
+            pixelCanvas.firstElementChild.remove();
         }
-        document.removeEventListener('click', pixelCanvasListening);
+    }
+    document.removeEventListener('click', pixelCanvasListening);
     //Create grid
     for (let y = 0; y < height; y++) {
         const oneRow = document.createElement('tr');
@@ -38,7 +38,6 @@ function addColorByClick() {
         const colorPicker = document.getElementById("colorPicker").value;
         let clickedPixel = document.getElementById(uniquieId);
         clickedPixel.style.backgroundColor = colorPicker;
-        console.log(document.getElementById("pixelCanvas").id);
     }
 }
 
